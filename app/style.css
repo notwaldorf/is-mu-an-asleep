@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+
+.answer {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #E91E63
+}
