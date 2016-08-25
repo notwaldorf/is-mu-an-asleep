@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/notwaldorf/are-you-asleep.git"
+    "url": "git+https://github.com/notwaldorf/is-mu-an-asleep.git"
   },
   "author": "Monica Dinculescu <noms@google.com>",
   "license": "MIT"
