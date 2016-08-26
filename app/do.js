@@ -1,16 +1,23 @@
 var moment = require('moment-timezone');
+var ipc = require('electron').ipcRenderer
 
-var now = moment().tz("Asia/Taipei");
+ipc.on('show', function (event, message) {
+  doItGetTheTimeDoItNow();
+})
 
-// Awake at 9:00 am.
-var awake = moment().tz("Asia/Taipei");
-awake.hours(9).minutes(0).seconds(0);
+function doItGetTheTimeDoItNow() {
+  var now = moment().tz("Asia/Taipei");
 
-// Asleep at 11:00 pm.
-var asleep = moment().tz("Asia/Taipei");
-asleep.hours(-23).minutes(0).seconds(0);  // maybe? I don't understand time.
+  // Awake at 9:00 am.
+  var awake = moment().tz("Asia/Taipei");
+  awake.hours(9).minutes(0).seconds(0);
 
-var isAsleep = now.isBefore(awake) && now.isAfter(asleep)? 'yes' : 'no';
+  // Asleep at 11:00 pm.
+  var asleep = moment().tz("Asia/Taipei");
+  asleep.hours(-23).minutes(0).seconds(0);  // maybe? I don't understand time.
 
-document.getElementById("time").innerHTML = now.format('hh:mm a');
-document.getElementById("answer").innerHTML = isAsleep;
+  var isAsleep = now.isBefore(awake) && now.isAfter(asleep)? 'yes' : 'no';
+
+  document.getElementById("time").innerHTML = now.format('hh:mm a');
+  document.getElementById("answer").innerHTML = isAsleep;
+}
