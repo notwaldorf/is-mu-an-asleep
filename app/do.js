@@ -10,7 +10,7 @@ var minutesOfDay = function(m) {
 }
 
 function doItGetTheTimeDoItNow() {
-  var now = minutesOfDay(moment().tz("Asia/Taipei"));
+  var now = minutesOfDay(moment().tz('Asia/Taipei'));
 
   // Awake at 9:00 am.
   var awake = 9 * 60;
@@ -18,16 +18,10 @@ function doItGetTheTimeDoItNow() {
   // Asleep at 11:00 pm.
   var asleep = 23 * 60;
 
-  var isAsleep = now < awake || now > asleep ? 'YES' : 'NO';
+  var isAsleep = now < awake || now > asleep;
 
   document.body.className = isAsleep ? 'dark' : 'light';
-  var timeString;
-  if (isAsleep) {
-    timeString = '🌙' + now.format('hh:mm a') + '😴';
-  } else {
-    timeString = '☀️' + now.format('hh:mm a') + '🎉';
-  }
-
-  document.getElementById("time").innerHTML = timeString;
-  document.getElementById("answer").innerHTML = isAsleep;
+  document.getElementById('time').innerHTML = now.format('hh:mm a');
+  document.getElementById('emoji').innerHTML =  isAsleep ? '😴' : '🎉'
+  document.getElementById('answer').innerHTML = isAsleep ? 'YES' : 'NO';
 }
