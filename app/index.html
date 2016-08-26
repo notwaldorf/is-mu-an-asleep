@@ -2,8 +2,22 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <h1 class="title">Is Mu-An asleep?</h1>
-<h1 class="answer" id="answer">yes</h1>
 
-<p>(because it's <span id="time">6:00AM</span> in Taipei)</p>
+<!-- From http://codepen.io/ClaireLarsen/pen/XmVyVX -->
+<svg viewBox="0 0 400 200">
+  <symbol id="s-text">
+    <text id="answer" text-anchor="middle" x="50%" y="70%"></text>
+  </symbol>
+
+  <g class = "g-ants">
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+    <use xlink:href="#s-text" class="text-copy"></use>
+  </g>
+</svg>
+
+<div class="why">(because it's <span id="time">6:00AM</span> in Taipei)</div>
 
 <script type="text/javascript" src="do.js"></script>

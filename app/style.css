@@ -1,21 +1,74 @@
 body {
   margin: 0;
-  padding: 40px 20px;
+  padding: 10px 0 0 0;
   font-family: sans-serif;
   text-align: center;
 }
 
+.why {
+  letter-spacing: 1px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
 .title {
   font-size: 26px;
-  text-transform: uppercase;
   outline: none;
   border: none;
   text-align: center;
+  font-weight: 400;
 }
 
 .answer {
   font-size: 26px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #E91E63
+  color: #AECE5C
+}
+
+svg {
+  display: block;
+  font: 10.5em 'Helvetica';
+  margin: 0 auto;
+  height: 100px;
+  width: 400px;
+
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 7px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 3.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+  stroke: #F8726D;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+  stroke: #6FABCE;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+  stroke: #ECD968;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+  stroke: #AECE5C;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+  stroke: #F5A36D;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
 }
