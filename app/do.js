@@ -5,12 +5,12 @@ ipc.on('show', function (event, message) {
   doItGetTheTimeDoItNow();
 })
 
-var minutesOfDay = function(m){
+var minutesOfDay = function(m) {
   return m.minutes() + m.hours() * 60;
 }
 
 function doItGetTheTimeDoItNow() {
-  var now = minutesOfDay( )moment().tz("Asia/Taipei"));
+  var now = minutesOfDay(moment().tz("Asia/Taipei"));
 
   // Awake at 9:00 am.
   var awake = 9 * 60;
