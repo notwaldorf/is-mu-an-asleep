@@ -5,18 +5,20 @@ ipc.on('show', function (event, message) {
   doItGetTheTimeDoItNow();
 })
 
+var minutesOfDay = function(m){
+  return m.minutes() + m.hours() * 60;
+}
+
 function doItGetTheTimeDoItNow() {
-  var now = moment().tz("Asia/Taipei");
+  var now = minutesOfDay( )moment().tz("Asia/Taipei"));
 
   // Awake at 9:00 am.
-  var awake = moment().tz("Asia/Taipei");
-  awake.hours(9).minutes(0).seconds(0);
+  var awake = 9 * 60;
 
   // Asleep at 11:00 pm.
-  var asleep = moment().tz("Asia/Taipei");
-  asleep.hours(-23).minutes(0).seconds(0);  // maybe? I don't understand time.
+  var asleep = 23 * 60;
 
-  var isAsleep = now.isBefore(awake) && now.isAfter(asleep)? 'YES' : 'NO';
+  var isAsleep = now < awake || now > asleep ? 'YES' : 'NO';
 
   document.body.className = isAsleep ? 'dark' : 'light';
   var timeString;
