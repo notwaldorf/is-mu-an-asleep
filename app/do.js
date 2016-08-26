@@ -18,6 +18,14 @@ function doItGetTheTimeDoItNow() {
 
   var isAsleep = now.isBefore(awake) && now.isAfter(asleep)? 'YES' : 'NO';
 
-  document.getElementById("time").innerHTML = now.format('hh:mm a');
+  document.body.className = isAsleep ? 'dark' : 'light';
+  var timeString;
+  if (isAsleep) {
+    timeString = '🌙' + now.format('hh:mm a') + '😴';
+  } else {
+    timeString = '☀️' + now.format('hh:mm a') + '🎉';
+  }
+
+  document.getElementById("time").innerHTML = timeString;
   document.getElementById("answer").innerHTML = isAsleep;
 }
